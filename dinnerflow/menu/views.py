@@ -1,11 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import Meal_add_form, Meal_edit_form
 from .models import Meal
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from .forms import Meal_add_form, Meal_edit_form
-from .models import Meal
+from django.utils import timezone
 
 
 def menu(request):
@@ -19,6 +17,7 @@ def add_meal(request):
     if request.method == "POST":
         form = Meal_add_form(request.POST, request.FILES)
         if form.is_valid():
+            meal_date = form.cleaned_data.get('date')
             form.save()
             return redirect("/menu/")
     else:
