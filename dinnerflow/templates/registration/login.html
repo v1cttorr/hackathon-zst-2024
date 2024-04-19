@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load widget_tweaks %}
+
 {% block title %}
     Login
 {% endblock %}
@@ -9,7 +11,8 @@
 {% block content %}
     <form method="post" class="form-group">
         {% csrf_token %}
-        {{ form|crispy}}
+        {% render_field form.username  placeholder="" class=""  id="" %}
+        {% render_field form.password  placeholder="" class=""  id="" %}
         <p>
             Nie posiadasz konta? Załóż je <a href="/register/">tutaj</a>
         </p>

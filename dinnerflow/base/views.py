@@ -9,20 +9,22 @@ def home(request):
     
         for client in clients:
             client.checkDate()
+    
+
+        human = Client.objects.get(user_id=request.user.id)
+    
+        days_left = (date.today() - human.date_of_purchase).days
+        print(days_left)
+
+        context = {
+            'date_of_purchase': human.date_of_purchase,
+            'days_left': days_left,
+            }
+
     except:
-        pass
+        context = {}
 
-    human = Client.objects.get(user_id=request.user.id)
-   
-    days_left = date.today() - human.date_of_purchase
-    print(days_left)
-
-    context = {
-        'date_of_purchase': human.date_of_purchase,
-        'days_left': days_left,
-        }
-
-    return render(request, 'home.html')
+    return render(request, 'home.html', context)
 
 def scan(request):
     print(f'aaaa {request.user.pk}')
