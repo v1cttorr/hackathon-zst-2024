@@ -95,8 +95,8 @@ button:active {
     outline-color: #065535;
 }
 .plate_img {
-    position: relative;
-    float: right;
+    position: absolute;
+    right: 34%;
 }
 table, tr, thead, th {
     background-color: #D0B98E !important;
@@ -124,4 +124,7 @@ table, tr, thead, th {
 .kup_bloczek {
     margin-left: 0;
     font-size: 40px;
+}
+.stripe-button {
+    background-color: #065535 !important;
 }
