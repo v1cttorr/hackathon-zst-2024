@@ -2,4 +2,18 @@
 
 {% block content %}
 
+
+HOME
+
+<input type="number" name="number" id="number" min="1" value="1">
+<button onclick="buy()">BUY</button>
+
+<script>
+    function buy(){
+        var days = document.getElementById('number').value
+        window.open('/buy/?days=' + days, '_self')
+    }
+</script>
+
+
 {% endblock %}
