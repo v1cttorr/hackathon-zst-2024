@@ -27,7 +27,7 @@ nav{
 }
 .nav-link{
     font-size: 18px !important;
-    font-weight: 600 !important;
+    font-weight: 300 !important;
     padding: 16px 10px !important;
 }
 .nav-link:hover{
@@ -41,6 +41,10 @@ nav{
     color: #fff !important;
     font-family: "Rowdies", sans-serif;
     font-weight: 300;
+}
+
+.navbar-brand{
+    padding-left: 10px !important;
 }
 
 .dropdown-item:hover{
