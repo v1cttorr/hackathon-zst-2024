@@ -31,6 +31,7 @@ class BuyPageView(TemplateView):
     
 def charge(request):
     global price
+    global days
     print(price)
     if request.method == 'POST':
         charge = stripe.Charge.create(
@@ -42,7 +43,9 @@ def charge(request):
 
     try:
         client = Client.objects.get(user=request.user)
+        client.how_many_days+=int(days)
+        client.save()
     except:
-        client = Client.objects.create(user=request.user)
+        client = Client.objects.create(user=request.user, how_many_days=days)
 
     return render(request, 'payment/charge.html')
