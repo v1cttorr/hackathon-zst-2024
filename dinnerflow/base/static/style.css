@@ -1,3 +1,60 @@
-body{
-    background-color: red;
+body {
+    margin: 0;
+    padding: 0p;
+    background-color: #CABEB2;
+}
+h1{
+    color: #493228;;
+    font-family: "Rowdies", sans-serif;
+    font-size: 80px;
+}
+.content{
+    padding: 20px;
+}
+nav, #collapsibleNavId, .navbar, .nav-item, .nav-link, .navbar-brand{
+    background-color: #065535 !important;
+    color: #fff !important;
+}
+nav{
+    border-bottom: 1px solid #fff;
+    padding: 0 !important;
+}
+.nav-link{
+    font-size: 18px;
+    font-weight: 600 !important;
+    padding: 16px 0;
+}
+.nav-link:hover{
+    background-color: #098553 !important;
+}
+.nav-link:hover{
+    color: #fff !important;
+}
+button {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #493228;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #493228;
+    background: #fff;
+    box-shadow: 3px 3px #493228;
+    cursor: pointer;
+}
+
+button:hover {
+    border-color:  #065535 !important;
+    box-shadow: 3px 3px #065535;
+    color: #065535;
+}
+button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+.input-label{
+    margin-left: 15px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
 }
