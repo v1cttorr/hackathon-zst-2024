@@ -49,8 +49,6 @@ class BuyPageView(TemplateView):
         context['paypal'] = paypal_payment
         context['product'] = 'Lunch Block'
 
-
-
         return context
     
 def charge(request):
