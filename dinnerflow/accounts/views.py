@@ -45,6 +45,7 @@ def logout(request):
 def home(request):
     return redirect('/')
 
+@login_required
 def pass_diner_to_someone(request):
     if request.method == 'POST':
         form = PassDinner(request.POST)
@@ -68,7 +69,7 @@ def pass_diner_to_someone(request):
                 new_user.how_many_days += 1
                 new_user.save()
 
-            return redirect('/profile/')
+            return render(request, 'accounts/pass_dinner_complete.html')
     else:
         form = PassDinner()
     

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Change Password</h1>
+    <h1>Podaruj bloczek</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Podaruj bloczek</button>
+        <button onclick="location.href='/pass_dinner_complete/'">Podaruj</button>
     </form>
 {% endblock %}
