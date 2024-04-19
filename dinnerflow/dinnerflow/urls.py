@@ -27,4 +27,5 @@ urlpatterns = [
     path('logout/', accounts_views.logout, name="logout"),
     path('', include('django.contrib.auth.urls')),
     path('', include('paypal.standard.ipn.urls'))
-]
+    path('', include('base.urls')),
+      path('', include('payment.urls')),
