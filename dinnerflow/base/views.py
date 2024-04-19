@@ -1,11 +1,27 @@
 from django.shortcuts import render
 from accounts.models import Client
+from datetime import date
 
 # Create your views here.
 def home(request):
-    clients = Client.objects.all()
-    for client in clients:
-        client.checkDate()
+    try:
+        clients = Client.objects.all()
+    
+        for client in clients:
+            client.checkDate()
+    except:
+        pass
+
+    human = Client.objects.get(user_id=request.user.id)
+   
+    days_left = date.today() - human.date_of_purchase
+    print(days_left)
+
+    context = {
+        'date_of_purchase': human.date_of_purchase,
+        'days_left': days_left,
+        }
+
     return render(request, 'home.html')
 
 def scan(request):
@@ -16,6 +32,15 @@ def scan(request):
     except:
         client = None
         ID = None
+
+    try:
+        clients = Client.objects.all()
+    
+        for client in clients:
+            client.checkDate()
+    except:
+        pass
+
     return render(request, 'base/scan.html', {'id': ID, 'client': client})
 
 def qr_code(request):
