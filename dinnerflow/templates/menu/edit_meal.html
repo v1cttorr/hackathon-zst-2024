@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Edytuj posiłek
+{% endblock title %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    </form>
+{% endblock content %}

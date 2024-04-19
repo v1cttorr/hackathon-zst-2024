@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'accounts.apps.AccountsConfig',
     'payment.apps.PaymentConfig',
+    'menu.apps.MenuConfig',
 
     'qr_code',
     'paypal.standard.ipn',
