@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponse
 from django.conf import settings
 from django.views.generic.base import TemplateView
 import stripe # type: ignore
+from accounts.models import Client
 
 # Create your views here.
 
@@ -38,4 +39,10 @@ def charge(request):
             description='Payment Gateway',
             source=request.POST['stripeToken']
         )
-    return HttpResponse('<h1>Succesfully paid</h1>')
+
+    try:
+        client = Client.objects.get(user=request.user)
+    except:
+        client = Client.objects.create(user=request.user)
+
+    return render(request, 'payment/charge.html')
