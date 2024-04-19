@@ -14,7 +14,7 @@
         {% csrf_token %}
         {% render_field form.username  placeholder="Login" class="login_label"  id="" %}
         {% render_field form.password  placeholder="Hasło" class="login_password"  id="" %}
-        <p style="text-align: center;">
+        <p style="text-align: center; font-family: 'Rowdies';">
             Nie posiadasz konta? Załóż je <a href="/register/">tutaj</a>
         </p>
         <button type="submit" class="btn btn-primary" style="position: relative; left: 47.3%;">Zaloguj</button>
