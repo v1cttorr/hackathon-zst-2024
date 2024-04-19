@@ -1,21 +1,22 @@
 from django.shortcuts import render
 from accounts.models import Client
-from datetime import date
+from datetime import date, timedelta
 
 # Create your views here.
 def home(request):
     try:
         clients = Client.objects.all()
-    
+
         for client in clients:
             client.checkDate()
-    
 
         human = Client.objects.get(user_id=request.user.id)
-    
-        days_left = (date.today() - human.date_of_purchase).days
+        
+        end_of_the_block = timedelta(days=human.how_many_days) + human.date_of_purchase
+        days_left = (end_of_the_block - date.today()).days
+        
         print(days_left)
-
+        
         context = {
             'date_of_purchase': human.date_of_purchase,
             'days_left': days_left,

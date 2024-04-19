@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, date
 # Create your models here.
 class Client(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date_of_purchase = models.DateField(auto_now_add=False)
+    date_of_purchase = models.DateField(auto_now_add=True)
     how_many_days = models.IntegerField(default=0)
 
     def __str__(self) -> str:
