@@ -1,20 +1,22 @@
 body {
     margin: 0;
     padding: 0p;
-    background-color: #308462 !important;
+    background-color: #F3E3C4 !important;
 }
-h1{
-    color: #493228;;
-    font-family: "Rowdies", sans-serif;
-    font-size: 80px;
+h1 {
+    color: #493228 !important;
+    font-family: "Rowdies";
+    font-size: 80px !important;
+    text-align: center;
 }
 .content{
     padding: 20px;
 }
-nav, #collapsibleNavId, .navbar, .nav-item, .nav-link, .navbar-brand{
+nav, #collapsibleNavId, .navbar, .navbar a, .nav-item, .nav-link, .navbar-brand{
     background-color: #065535 !important;
     color: #fff !important;
     border: 0;
+    font-family: "Rowdies";
 }
 nav{
     border-bottom: 1px solid #fff;
@@ -29,6 +31,17 @@ nav{
     background-color: #098553 !important;
 }
 .nav-link:hover{
+    color: #fff !important;
+}
+.dropdown-menu, .dropdown-item{
+    background-color: #065535 !important;
+    color: #fff !important;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+}
+
+.dropdown-item:hover{
+    background-color: #098553 !important;
     color: #fff !important;
 }
 button {
@@ -58,6 +71,7 @@ button:active {
     color: #fff;
     font-weight: 600;
     font-size: 18px;
+    
 }
 
 .input-wrapper input {
@@ -67,11 +81,11 @@ button:active {
     font-size: 1rem;
     width: 13em;
     border-radius: 1rem;
-    color: lightcoral;
+    color: #000;
     box-shadow: 0 0.4rem #dfd9d9;
     cursor: pointer;
 }
   
 .input-wrapper input:focus {
-    outline-color: lightcoral;
+    outline-color: #065535;
 }
