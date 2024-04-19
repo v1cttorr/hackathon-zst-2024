@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>Buy for 9.00 PLN per DAY</h1>
     <form action="{% url 'charge' %}" method="post">
         {% csrf_token %}
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" id="script" async
