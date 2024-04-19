@@ -12,17 +12,14 @@
             data-currency='PLN'>
         </script>
         <script async>
-            //TODO not changing in real time
-            // var days = (parseInt(document.getElementById('days').value + '00') * 9).toString()
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             var days = (parseInt(urlParams.get('days') + '00') * 9).toString()
-            console.log(days)
             document.getElementById('script').setAttribute('data-amount', days)
         </script>
         <script>
             // nie usuwac; potrzebne
-            document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+            // document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
         </script>
         <!-- <button type="submit">Buy Lunch Block</button> -->
     </form>

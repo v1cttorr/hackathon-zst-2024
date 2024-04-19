@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0p;
+
     background-color: #F3E3C4 !important;
 }
 h1 {
@@ -16,7 +17,9 @@ nav, #collapsibleNavId, .navbar, .navbar a, .nav-item, .nav-link, .navbar-brand{
     background-color: #065535 !important;
     color: #fff !important;
     border: 0;
+
     font-family: "Rowdies";
+
 }
 nav{
     border-bottom: 1px solid #fff;
