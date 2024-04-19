@@ -10,3 +10,6 @@ def home(request):
 
 def scan(request):
     return render(request, 'base/scan.html')
+
+def qr_code(request):
+    return render(request, 'base/qr_code.html', {'id': request.user.id})
