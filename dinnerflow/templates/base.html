@@ -33,7 +33,7 @@
                         </li>
                         {% if user.is_superuser %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/scan/">Scan</a>
+                            <a class="nav-link" href="/scan/">Skanuj</a>
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
@@ -49,8 +49,8 @@
                                 <a class="dropdown-item" href="/profile/">Profil</a>
                                 <a class="dropdown-item" href="/logout/">Wyloguj</a>
                                 {% else %}
-                                <a class="dropdown-item" href="/login/">Login</a>
-                                <a class="dropdown-item" href="/register/">Register</a>
+                                <a class="dropdown-item" href="/login/">Zaloguj się</a>
+                                <a class="dropdown-item" href="/register/">Zarejestruj się</a>
                                 {% endif %}
                             </div>
                         </li>

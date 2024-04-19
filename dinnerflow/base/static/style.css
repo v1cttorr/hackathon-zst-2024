@@ -176,3 +176,15 @@ footer {
     width: 100%;
     margin: -5px;
 }
+
+@media only screen and (max-width: 600px)
+{
+    h1{
+        font-size: 24px !important;
+    }
+    #my-qr-reader{
+        width: 98% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

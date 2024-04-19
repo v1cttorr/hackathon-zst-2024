@@ -28,15 +28,7 @@ def home(request):
     return render(request, 'home.html', context)
 
 def scan(request):
-    print(f'scanner {request.user.pk}')
-    try:
-        ID = request.GET.get('var')
-        print(f'ID {ID}')
-        client = Client.objects.get(user_id=int(ID))
-        print(f'client name {client.user.first_name}')
-    except:
-        client = None
-        ID = None
+    
 
     try:
         clients = Client.objects.all()
@@ -45,6 +37,16 @@ def scan(request):
             client.checkDate()
     except:
         pass
+
+    try:
+        ID = request.GET.get('var')
+        print(f'ID {ID}')
+        client = Client.objects.get(user_id=ID)
+        print(f'client name {client.user.first_name}')
+        print(f'client lastname {client.user.last_name}')
+    except:
+        client = None
+        ID = None
 
     return render(request, 'base/scan.html', {'id': ID, 'client': client})
 
