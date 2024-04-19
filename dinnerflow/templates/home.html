@@ -15,21 +15,6 @@
 <img class="plate_img" src="{% static 'img/plate.png'%}" alt="plate">
 
 
-
-<table class="table-shop">
-    <tr>
-        <th>Zakupiono:</th>
-        <th>{{date_of_purchase|date:"d M, Y" }}</th>
-        
-    </tr>
-    <tr>
-        <th>Pozostało:</th>
-        <th>{{days_left}} dni</th>
-    </tr>
-
-</table>
-
-
 <script>
     function buy(){
         var days = document.getElementById('number').value
