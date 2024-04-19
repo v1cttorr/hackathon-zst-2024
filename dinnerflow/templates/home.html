@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block content %}
 
@@ -9,6 +11,7 @@
     <input type="number" name="number" id="number" min="1" value="1" class="input">
     <button onclick="buy()">BUY</button>
 </div>
+<img class="plate_img" src="{% static 'img/plate.png'%}" alt="plate">
 
 
 
