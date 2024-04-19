@@ -3,13 +3,19 @@
 {% block content %}
 
 
-HOME
+<h1>HOME</h1>
+
+
+<input type="number" name="number" id="number" min="1" value="1">
+<button onclick="buy()">BUY</button>
+<img src="../plate.png" alt="plate">
 
 
 <div class="input-wrapper">
     <input type="number" name="number" id="number" min="1" value="1" class="input">
     <button onclick="buy()">BUY</button>
 </div>
+
 
 <script>
     function buy(){
