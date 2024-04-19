@@ -17,10 +17,17 @@ def home(request):
         
         print(days_left)
         
-        context = {
-            'date_of_purchase': human.date_of_purchase,
-            'days_left': days_left,
-            }
+        if human.date_of_purchase == None or human.date_of_purchase == '':
+            context['date_of_purchase'] = 0
+            
+        else:
+            context['date_of_purchase'] = human.date_of_purchase,
+
+        if days_left == '' or days_left == None:
+            context['days_left'] = 0
+        else:
+            context['days_left'] = days_left
+        
 
     except:
         context = {}

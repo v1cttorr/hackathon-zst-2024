@@ -41,6 +41,11 @@
                             <a class="nav-link" href="/qrcode/">Mój bloczek</a>
                         </li>
                         {% endif %}
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pass_dinner/">Podarunek</a>
+                        </li>
+                        {% endif %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">Ustawienia</a>
