@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if id %}
-        <h1>{{client.name}}</h1>
+        <h1>{{client.user.first_name}} {{client.user.last_name}}</h1>
     {% endif %}
 
     <div class="container">
@@ -30,10 +30,7 @@
         }
 
         domReady(function () {
-
-            // If found you qr code
             function onScanSuccess(decodeText, decodeResult) {
-                // alert("You Qr is : " + decodeText, decodeResult);
                 window.open('/scan/?var='+decodeText, '_self')
             }
 
