@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0p;
-
     background-color: #F3E3C4 !important;
 }
 h1 {
@@ -51,7 +50,7 @@ nav{
     background-color: #098553 !important;
     color: #fff !important;
 }
-button {
+button, .add-meal-buttons {
     font-family: monospace;
     font-size: 18px !important;
     color: #493228;
@@ -138,4 +137,42 @@ tbody {
 }
 .add_meal {
     margin-bottom: 5px;
+}
+.add-meal-buttons {
+    margin-top: 7px;
+    color: #fff !important;
+    display: inline-block !important; 
+}
+.login_label, .login_password {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    width: 13em;
+    border-radius: 1rem;
+    color: #000;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    margin-left: 44%;
+}
+.register_firstname, .register_lastname, .register_email, .register_username, .register_password1, .register_password2 {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    width: 16em;
+    border-radius: 1rem;
+    color: #000;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    margin-left: 42.5%;
+    margin-bottom: 5px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: -5px;
 }

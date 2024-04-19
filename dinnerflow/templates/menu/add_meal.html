@@ -10,5 +10,7 @@
         {% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-primary">Dodaj</button>
+        <button onclick="location.href='/menu/'" class="btn btn-primary">Wstecz</button>
     </form>
+   
 {% endblock %}

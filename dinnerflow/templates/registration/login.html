@@ -9,13 +9,14 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<h1>Logowanie</h1>
     <form method="post" class="form-group">
         {% csrf_token %}
-        {% render_field form.username  placeholder="" class=""  id="" %}
-        {% render_field form.password  placeholder="" class=""  id="" %}
-        <p>
+        {% render_field form.username  placeholder="Login" class="login_label"  id="" %}
+        {% render_field form.password  placeholder="Hasło" class="login_password"  id="" %}
+        <p style="text-align: center;">
             Nie posiadasz konta? Załóż je <a href="/register/">tutaj</a>
         </p>
-        <button type="submit" class="btn btn-primary">Zaloguj</button>
+        <button type="submit" class="btn btn-primary" style="position: relative; left: 47.3%;">Zaloguj</button>
     </form>
 {% endblock %}
