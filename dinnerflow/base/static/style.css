@@ -106,6 +106,13 @@ table, tr, thead, th {
     background-color: #D0B98E !important;
     font-family: "Rowdies";
 }
+tbody {
+    background-color: #D0B98E !important;
+    font-family: "Rowdies";
+}
+.table th {
+    color:#493228 !important;
+}
 .btn {
     background-color: #065535 !important;
     border:#065535 !important
@@ -129,6 +136,6 @@ table, tr, thead, th {
     margin-left: 0;
     font-size: 40px;
 }
-.stripe-button {
-    background-color: #065535 !important;
+.add_meal {
+    margin-bottom: 5px;
 }

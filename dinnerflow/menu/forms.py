@@ -22,6 +22,8 @@ class Meal_add_form(forms.Form):
         return meal
     
 class Meal_edit_form(forms.ModelForm):
+    allergens = forms.MultipleChoiceField(choices=[('gluten', 'Gluten'), ('jaja', 'Jaja'), ('orzechy', 'Orzechy'), ('nabiał', 'Nabiał'), ('sezam', 'Sezam')], widget=forms.CheckboxSelectMultiple)
+
     class Meta:
         model = Meal
         fields = ['meal_name', 'meal_description', 'meal_price', 'allergens', 'date']
