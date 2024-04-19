@@ -147,6 +147,7 @@ login_redirect_url = '/'
 logout_redirect_url = '/'
 
 
-PAYPAL_RECEIVER_EMAIL = 'vekewet116@adstam.com'
+# PAYPAL_RECEIVER_EMAIL = 'vekewet116@adstam.com'
 PAYPAL_RECEIVER_EMAIL = 'paypal-facilitator@business.example.com'
 PAYPAL_TEST = True
+PAYPAL_BUY_BUTTON_IMAGE = 'https://cdn.discordapp.com/attachments/1206894551260991491/1230910541447434290/png-clipart-logo-paypal-graphics-product-computer-icons-paypal-blue-angle-thumbnail-removebg-preview.png?ex=663509c6&is=662294c6&hm=d41bcb2a3fb385aac6b25f7b1b934d7822e049df0e5f1fe764edef2ad80f8500&'

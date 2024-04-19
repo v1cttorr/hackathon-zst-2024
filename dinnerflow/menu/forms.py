@@ -22,7 +22,7 @@ class Meal_add_form(forms.Form):
         return meal
     
 class Meal_edit_form(forms.ModelForm):
-    allergens = forms.MultipleChoiceField(choices=[('gluten', 'Gluten'), ('jaja', 'Jaja'), ('orzechy', 'Orzechy'), ('nabiał', 'Nabiał'), ('sezam', 'Sezam')], widget=forms.CheckboxSelectMultiple)
+    allergens = forms.MultipleChoiceField(choices=[('gluten', 'Gluten'), ('jaja', 'Jaja'), ('orzechy', 'Orzechy'), ('nabiał', 'Nabiał'), ('sezam', 'Sezam')], widget=forms.CheckboxSelectMultiple, required=False)
 
     class Meta:
         model = Meal
