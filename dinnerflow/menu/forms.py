@@ -5,7 +5,7 @@ class Meal_add_form(forms.Form):
     meal_name = forms.CharField(max_length=100)
     meal_description = forms.CharField(widget=forms.Textarea)
     meal_price = forms.DecimalField(max_digits=5, decimal_places=2)
-    allergens = forms.MultipleChoiceField(choices=[('gluten', 'Gluten'), ('jaja', 'Jaja'), ('orzechy', 'Orzechy'), ('nabiał', 'Nabiał'), ('sezam', 'Sezam')], widget=forms.CheckboxSelectMultiple)
+    allergens = forms.MultipleChoiceField(choices=[('gluten', 'Gluten'), ('jaja', 'Jaja'), ('orzechy', 'Orzechy'), ('nabiał', 'Nabiał'), ('sezam', 'Sezam')], widget=forms.CheckboxSelectMultiple, required=False)
     date = forms.DateField()
 
     class Meta:

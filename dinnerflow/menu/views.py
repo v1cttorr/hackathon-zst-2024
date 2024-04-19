@@ -18,6 +18,9 @@ def add_meal(request):
         form = Meal_add_form(request.POST, request.FILES)
         if form.is_valid():
             meal_date = form.cleaned_data.get('date')
+            if meal_date < timezone.now().date():
+                messages.error(request, "Nie można dodać posiłku z przeszłości")
+                return redirect("/menu/add_meal/")
             form.save()
             return redirect("/menu/")
     else:
