@@ -9,7 +9,14 @@ def home(request):
     return render(request, 'home.html')
 
 def scan(request):
-    return render(request, 'base/scan.html')
+    try:
+        ID = request.GET.get('var')
+        print(ID)
+        client = Client.objects.get(user_id=ID)
+    except:
+        client = None
+        ID = None
+    return render(request, 'base/scan.html', {'id': ID, 'client': client})
 
 def qr_code(request):
     return render(request, 'base/qr_code.html', {'id': request.user.id})
