@@ -4,6 +4,8 @@
 
     {% if id %}
         <h1>{{client.user.first_name}} {{client.user.last_name}}</h1>
+        {% else %}
+        <h1>Brak użytkownika</h1>
     {% endif %}
 
     <div class="container">
