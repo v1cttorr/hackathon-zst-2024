@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block tile %}
+    Jadłospis
+{% endblock tile %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Jadłospis</h1>
+                <a href="/menu/add_meal" class="btn btn-primary">Dodaj posiłek</a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Opis</th>
+                            <th>Obraz</th>
+                            <th>Edytuj</th>
+                            <th>Usuń</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for meal in meals %}
+                            <tr>
+                                <td>{{ meal.meal_name }}</td>
+                                <td>{{ meal.meal_description }}</td>
+                                <td>{{ meal.meal_price }}</td>
+                                <td><img src="{{ meal.image.url }}" alt="{{ meal.name }}" style="max-width: 100px;"></td>
+                                <td><a href="/menu/edit_meal/{{meal.pk }}/" class="btn btn-warning">Edit</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
