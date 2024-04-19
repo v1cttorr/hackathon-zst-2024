@@ -177,6 +177,19 @@ footer {
     margin: -5px;
 }
 
+.table-shop th, .table-shop tr {
+    border: 1px solid black !important;
+    border-collapse: collapse !important;
+    padding: 5px;
+}
+.table-shop {
+    width: auto !important;
+    position: relative;
+    padding: 0 !important;
+    margin-top: 530px;
+    margin-left: -20px !important;
+
+
 @media only screen and (max-width: 600px)
 {
     h1{
@@ -187,4 +200,5 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+
 }
