@@ -9,8 +9,8 @@
 {% block content %}
     <form method="post" class="content-section">
         {% csrf_token %}
-        <legend class="border-bottom mb-3">Create an Account</legend>
+        <legend class="border-bottom mb-3">Załóż Konto</legend>
         {{ form|crispy}}
-        <button name="create" type="submit" class="btn btn-primary">Register</button>
+        <button name="create" type="submit" class="btn btn-primary">Zarejestruj</button>
     </form>
 {% endblock %}
