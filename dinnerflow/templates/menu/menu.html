@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load widget_tweaks %}
 {% block tile %}
     Jadłospis
 {% endblock tile %}
@@ -17,6 +17,7 @@
                             <th>Opis</th>
                             <th>Cena</th>
                             <th>Data</th>
+                            <th>Alergeny</th>
                             {% if user.is_authenticated and user.is_superuser %}
                                 <th>Edytuj</th>
                                 <th>Usuń</th>
@@ -24,16 +25,22 @@
                             
                         </tr>
                     </thead>
-                    <a href="/menu/add_meal" class="btn btn-primary">Dodaj nowy posiłek</a>
                     <tbody>
+                        <a href="/menu/add_meal" class="btn btn-primary add_meal">Dodaj nowy posiłek</a>                                                                                            
                         {% for meal in meals %}
-                            <tr>
+                        <tr>
                                 <td>{{ meal.meal_name }}</td>
                                 <td>{{ meal.meal_description }}</td>
                                 <td>{{ meal.meal_price }}</td>
                                 <td>{{ meal.date }}</td>
+                                <td>
+                                    {% for allergen in meals.allergen %}
+                                        <p> {{ allergen }} </p>
+                                    {% endfor %}
+
+                                </td>
                                 {% if user.is_authenticated and user.is_superuser %}
-                                    <td><a href="/menu/edit_meal/{{meal.pk }}/" class="btn btn-warning">Edit</a></td>
+                                    <td><a href="/menu/edit_meal/{{meal.pk }}/" class="btn btn-warning" style="color: #fff !important">Edit</a></td>
                                     <td><a href="/menu/delete_meal/{{meal.pk }}/" class="btn btn-danger">Delete</a></td>
                                 {% endif %}
                             </tr>

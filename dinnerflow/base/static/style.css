@@ -99,12 +99,19 @@ button:active {
     outline-color: #065535;
 }
 .plate_img {
-    position: relative;
-    float: right;
+    position: absolute;
+    right: 34%;
 }
 table, tr, thead, th {
     background-color: #D0B98E !important;
     font-family: "Rowdies";
+}
+tbody {
+    background-color: #D0B98E !important;
+    font-family: "Rowdies";
+}
+.table th {
+    color:#493228 !important;
 }
 .btn {
     background-color: #065535 !important;
@@ -128,4 +135,7 @@ table, tr, thead, th {
 .kup_bloczek {
     margin-left: 0;
     font-size: 40px;
+}
+.add_meal {
+    margin-bottom: 5px;
 }
