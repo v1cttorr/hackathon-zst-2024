@@ -20,6 +20,8 @@ from django.urls import include
 from accounts import views as accounts_views
 
 urlpatterns = [
+    path('', include('base.urls')),
+    path('', include('payment.urls')),
     path('admin/', admin.site.urls),
     path('register/', accounts_views.register, name="register"),
     path('profile/', accounts_views.profile, name="profile"),
@@ -27,6 +29,4 @@ urlpatterns = [
     path('logout/', accounts_views.logout, name="logout"),
     path('', include('django.contrib.auth.urls')),
     path('', include('paypal.standard.ipn.urls')),
-    path('', include('base.urls')),
-    path('', include('payment.urls')),
 ]
