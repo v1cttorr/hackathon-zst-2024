@@ -1,4 +1,5 @@
 from django import forms
+from django.db import models
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from crispy_forms.helper import FormHelper
@@ -32,4 +33,15 @@ class RegisterForm(UserCreationForm):
         user.first_name = self.cleaned_data['firstname']
         user.last_name = self.cleaned_data['lastname']
         user.save()
+        return user
+    
+
+class PassDinner(forms.Form):
+    email = forms.ChoiceField(choices=[(user.email, user.email) for user in User.objects.all()])
+    
+    class Meta:
+        fields = ['email']
+    
+    def save(self):
+        user = User.objects.get(username=self.cleaned_data['username'])
         return user
