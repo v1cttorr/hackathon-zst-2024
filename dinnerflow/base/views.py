@@ -25,10 +25,12 @@ def home(request):
     return render(request, 'home.html')
 
 def scan(request):
+    print(f'aaaa {request.user.pk}')
     try:
         ID = request.GET.get('var')
         print(ID)
         client = Client.objects.get(user_id=ID)
+        print(client.name)
     except:
         client = None
         ID = None

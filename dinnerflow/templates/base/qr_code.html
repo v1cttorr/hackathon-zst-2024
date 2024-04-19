@@ -3,7 +3,9 @@
 {% load qr_code %}
 
 {% block content %}
-
+<h1>Twój Kod</h1>
+<div class="qr_code" style="text-align: center;">
     {% qr_from_text id size='L' %}
+</div>
 
 {% endblock %}

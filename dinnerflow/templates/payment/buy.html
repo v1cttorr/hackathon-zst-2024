@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Kup bloczek za 9.00 PLN za 1 dzień</h1>
+
     <form action="{% url 'charge' %}" method="post">
         {% csrf_token %}
+        
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" id="script" async
             data-key='{{key}}'
             data-description='Payment Gateway'
             data-amount=''
             data-locale='auto'
             data-currency='PLN'>
-        </script>
-        <script async>
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             var days = (parseInt(urlParams.get('days') + '00') * 9).toString()
