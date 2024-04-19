@@ -92,3 +92,7 @@ button:active {
 .input-wrapper input:focus {
     outline-color: #065535;
 }
+.plate_img {
+    position: relative;
+    float: right;
+}
