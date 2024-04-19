@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+    {% if id %}
+        <h1>{{client.name}}</h1>
+    {% endif %}
+
     <div class="container">
         <h1 id="scan-heading" style="text-align: center;">Scan QR Codes</h1>
         <div class="section">
