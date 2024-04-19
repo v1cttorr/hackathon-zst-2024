@@ -29,6 +29,7 @@ urlpatterns = [
     path('profile/', accounts_views.profile, name="profile"),
     #path('login/', accounts_views.login, name="login"),
     path('logout/', accounts_views.logout, name="logout"),
+    path('accounts/profile/', accounts_views.home, name="home"),
     path('', include('django.contrib.auth.urls')),
     path('', include('paypal.standard.ipn.urls')),
 ]

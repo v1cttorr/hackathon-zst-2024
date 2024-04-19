@@ -11,9 +11,10 @@ from .models import Meal
 def menu(request):
     meals = Meal.objects.all()
     
-    return render(request, "menu/menu.html", {"meals": meals})
+    return render(request, "menu/menu.html", {"meals": meals, 'user': request.user})
 
-# Create your views here.
+
+@login_required
 def add_meal(request):
     if request.method == "POST":
         form = Meal_add_form(request.POST, request.FILES)
@@ -25,18 +26,7 @@ def add_meal(request):
     
     return render(request, "menu/add_meal.html", {"form": form})
 
-# Create your views here.
-def add_meal(request):
-    if request.method == "POST":
-        form = Meal_add_form(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect("/menu/")
-    else:
-        form = Meal_add_form()
-    
-    return render(request, "menu/add_meal.html", {"form": form})
-
+@login_required
 def edit_meal(request, id):
     meal = Meal.objects.get(id=id)
     if request.method == "POST":
@@ -48,3 +38,11 @@ def edit_meal(request, id):
         form = Meal_edit_form(instance=meal)
     
     return render(request, "menu/edit_meal.html", {"form": form})
+
+
+@login_required
+def delete_meal(request, id):
+    meal = Meal.objects.get(id=id)
+    meal.delete()
+    
+    return redirect("/menu/")
