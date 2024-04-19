@@ -19,7 +19,7 @@ def register(request):
 
 @login_required
 def profile(request):
-    return render(request, 'accounts/profile.html', {"": ""})
+    return render(request, 'accounts/profile.html')
 
 
 def login_user(request):
@@ -37,4 +37,7 @@ def login_user(request):
 @login_required
 def logout(request):
     auth_logout(request)
+    return redirect('/')
+
+def home(request):
     return redirect('/')

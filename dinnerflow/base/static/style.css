@@ -32,11 +32,11 @@ nav{
 }
 button {
     font-family: monospace;
-    font-size: 1.5rem;
+    font-size: 18px !important;
     color: #493228;
     text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 14px 24px;
+    border-radius: 10px !important;
     border: 2px solid #493228;
     background: #fff;
     box-shadow: 3px 3px #493228;
@@ -57,4 +57,20 @@ button:active {
     color: #fff;
     font-weight: 600;
     font-size: 18px;
+}
+
+.input-wrapper input {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 13em;
+    border-radius: 1rem;
+    color: lightcoral;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+}
+  
+.input-wrapper input:focus {
+    outline-color: lightcoral;
 }

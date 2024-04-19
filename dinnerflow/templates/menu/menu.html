@@ -9,15 +9,18 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Jadłospis</h1>
-                <a href="/menu/add_meal" class="btn btn-primary">Dodaj posiłek</a>
+                <a href="/menu/add_meal" class="btn btn-primary">Dodaj nowy posiłek</a>
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Nazwa</th>
                             <th>Opis</th>
-                            <th>Obraz</th>
-                            <th>Edytuj</th>
-                            <th>Usuń</th>
+                            <th>Cena</th>
+                            {% if user.is_authenticated and user.is_superuser %}
+                                <th>Edytuj</th>
+                                <th>Usuń</th>
+                            {% endif %}
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -26,8 +29,10 @@
                                 <td>{{ meal.meal_name }}</td>
                                 <td>{{ meal.meal_description }}</td>
                                 <td>{{ meal.meal_price }}</td>
-                                <td><img src="{{ meal.image.url }}" alt="{{ meal.name }}" style="max-width: 100px;"></td>
-                                <td><a href="/menu/edit_meal/{{meal.pk }}/" class="btn btn-warning">Edit</a></td>
+                                {% if user.is_authenticated and user.is_superuser %}
+                                    <td><a href="/menu/edit_meal/{{meal.pk }}/" class="btn btn-warning">Edit</a></td>
+                                    <td><a href="/menu/delete_meal/{{meal.pk }}/" class="btn btn-danger">Delete</a></td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                     </tbody>
