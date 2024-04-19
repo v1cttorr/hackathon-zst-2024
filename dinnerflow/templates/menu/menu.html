@@ -16,6 +16,7 @@
                             <th>Nazwa</th>
                             <th>Opis</th>
                             <th>Cena</th>
+                            <th>Data</th>
                             {% if user.is_authenticated and user.is_superuser %}
                                 <th>Edytuj</th>
                                 <th>Usuń</th>
@@ -29,6 +30,7 @@
                                 <td>{{ meal.meal_name }}</td>
                                 <td>{{ meal.meal_description }}</td>
                                 <td>{{ meal.meal_price }}</td>
+                                <td>{{ meal.date }}</td>
                                 {% if user.is_authenticated and user.is_superuser %}
                                     <td><a href="/menu/edit_meal/{{meal.pk }}/" class="btn btn-warning">Edit</a></td>
                                     <td><a href="/menu/delete_meal/{{meal.pk }}/" class="btn btn-danger">Delete</a></td>
