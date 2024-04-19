@@ -7,6 +7,12 @@ from django.contrib.auth.decorators import login_required
 from .forms import Meal_add_form, Meal_edit_form
 from .models import Meal
 
+
+def menu(request):
+    meals = Meal.objects.all()
+    
+    return render(request, "menu/menu.html", {"meals": meals})
+
 # Create your views here.
 def add_meal(request):
     if request.method == "POST":
