@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <p>
+            Nie posiadasz konta? Załóż je <a href="/register/">tutaj</a>
+        </p>
+        <button type="submit" class="btn btn-primary">Zaloguj</button>
+    </form>
+{% endblock %}
