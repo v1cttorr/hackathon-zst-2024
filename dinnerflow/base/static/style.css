@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0p;
-    background-color: #CABEB2;
+    background-color: #308462 !important;
 }
 h1{
     color: #493228;;
@@ -14,15 +14,16 @@ h1{
 nav, #collapsibleNavId, .navbar, .nav-item, .nav-link, .navbar-brand{
     background-color: #065535 !important;
     color: #fff !important;
+    border: 0;
 }
 nav{
     border-bottom: 1px solid #fff;
     padding: 0 !important;
 }
 .nav-link{
-    font-size: 18px;
+    font-size: 18px !important;
     font-weight: 600 !important;
-    padding: 16px 0;
+    padding: 16px 10px !important;
 }
 .nav-link:hover{
     background-color: #098553 !important;
