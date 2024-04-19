@@ -2,9 +2,25 @@
 
 {% block content %}
 
-    {% if id %}
-        <h1>{{client.user.first_name}} {{client.user.last_name}}</h1>
-    {% endif %}
+    <div id="userHead" style="width: 80%; padding: 8px; background-color: rgb(255, 212, 163); margin: 0 auto; border-radius: 20px;">
+        {% if id %}
+            <h1>{{client.user.first_name}} {{client.user.last_name}}</h1>
+            {% else %}
+            <h1 id="isUser"></h1>
+            <script>
+                var url = (window.location.href).toString()
+                console.log(url.substring(url.length-5, url.length-1))
+                if(url.substring(url.length-5, url.length-1)=='scan'){
+                    document.getElementById('isUser').innerHTML = ''
+                    document.getElementById('userHead').style.display = 'none'
+                }
+                else{
+                    document.getElementById('isUser').innerHTML = 'Brak użytkownika'
+                }
+            </script>
+            
+        {% endif %}
+    </div>
 
     <div class="container">
         <h1 id="scan-heading" style="text-align: center;">Zeskanuj kod QR</h1>
