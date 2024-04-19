@@ -8,8 +8,9 @@
         console.log(days)
         // document.getElementById('script').setAttribute('data-amount', days)
     </script>
-
+    
     <h1 id="price"></h1>
+    {{paypal.render}}
 
     <form action="{% url 'charge' %}" method="post">
         {% csrf_token %}

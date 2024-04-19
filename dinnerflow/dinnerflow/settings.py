@@ -145,3 +145,8 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 login_redirect_url = '/'
 logout_redirect_url = '/'
+
+
+PAYPAL_RECEIVER_EMAIL = 'vekewet116@adstam.com'
+PAYPAL_RECEIVER_EMAIL = 'paypal-facilitator@business.example.com'
+PAYPAL_TEST = True

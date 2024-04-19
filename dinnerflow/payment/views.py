@@ -4,6 +4,9 @@ from django.conf import settings
 from django.views.generic.base import TemplateView
 import stripe # type: ignore
 from accounts.models import Client
+import uuid
+from django.urls import reverse
+from paypal.standard.forms import PayPalPaymentsForm # type: ignore
 
 # Create your views here.
 
@@ -27,6 +30,27 @@ class BuyPageView(TemplateView):
         price = int(days) * 9
         print(price)
 
+        #PAYPAL
+        host = self.request.get_host()
+
+        paypal_checkout = {
+            'business': settings.PAYPAL_RECEIVER_EMAIL,
+            'amount': price,
+            'item_name': 'Lunch Block',
+            'invoice': uuid.uuid4(),
+            'currency_code': 'PLN',
+            'notify-url': f'https://{host}{reverse('paypal-ipn')}',
+            'return-url': f'https://{host}{reverse('payment-success')}',
+            'cancel-url': f'https://{host}{reverse('payment-failed')}',
+        }
+
+        paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
+
+        context['paypal'] = paypal_payment
+        context['product'] = 'Lunch Block'
+
+
+
         return context
     
 def charge(request):
@@ -49,3 +73,12 @@ def charge(request):
         client = Client.objects.create(user=request.user, how_many_days=days)
 
     return render(request, 'payment/charge.html')
+
+
+
+
+def PaymentSuccess(request):
+    return render(request, 'payment/payment-success.html')
+
+def PaymentFailed(request):
+    return render(request, 'payment/payment-failed.html')
